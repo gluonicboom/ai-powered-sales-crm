@@ -22,6 +22,7 @@ import {
   SidebarFooter,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
+import UpgradeCard from "@/components/ui/upgradeCard";
 
 function AppSidebar() {
   const location = useLocation();
@@ -45,7 +46,7 @@ function AppSidebar() {
         </div>
 
         <div className="flex flex-col">
-          <span className="text-sm font-semibold">Sales CRM</span>
+          <span className="text-sm font-semibold">Closora</span>
           <span className="text-xs text-muted-foreground">
             Sales workspace
           </span>
@@ -145,6 +146,9 @@ function AppSidebar() {
     </SidebarGroupContent>
   </SidebarGroup>
 </SidebarContent>
+<SidebarFooter>
+  <UpgradeCard/> 
+</SidebarFooter>
     </Sidebar>
   );
 }
