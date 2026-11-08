@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/sidebar";
 import UpgradeCard from "@/components/ui/upgradeCard";
 
+
 function AppSidebar() {
   const location = useLocation();
 
@@ -40,20 +41,23 @@ function AppSidebar() {
   return (
     <Sidebar>
        <SidebarHeader>
-      <div className="flex items-center gap-3 px-2 py-2">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-          <LayoutDashboard className="h-5 w-5" />
-        </div>
-
-        <div className="flex flex-col">
-          <span className="text-sm font-semibold">Closora</span>
+                <div className="flex items-center gap-3 px-2 py-2">
+                  <div className="h-10 w-10 shrink-0">
+            <img
+              src="/images/closora-logo.png"
+              alt="Closora logo"
+              className="h-full w-full object-contain"
+            />
+          </div>
+        <div className="flex flex-col gap-0.5">
+          <span className="text-xl font-bold tracking-tight text-[#17152B]">Closora</span>
           <span className="text-xs text-muted-foreground">
-            Sales workspace
+            Free Plan
           </span>
         </div>
       </div>
     </SidebarHeader>
-    {/* Navigation */}
+    
       <SidebarContent>
   {/* Workspace navigation */}
   <SidebarGroup>
@@ -73,13 +77,18 @@ function AppSidebar() {
                 asChild
                 isActive={location.pathname === item.path}
                 tooltip={item.name}
+                  className="h-10 rounded-lg px-3 text-sm font-medium transition-colors
+                   data-[active=true]:!bg-violet-50 [&[data-active=true]>svg]:!text-inherit
+                    data-[active=true]:!text-blue-600 hover:bg-violet-50/70"    
               >
                 <NavLink
                   to={item.path}
                   className="flex items-center gap-2"
                 >
                   <item.icon />
-                  <span>{item.name}</span>
+                                  <span className={location.pathname === item.path ? "text-blue-600" : ""}>
+                    {item.name}
+                  </span>
                 </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -102,13 +111,19 @@ function AppSidebar() {
                 asChild
                 isActive={location.pathname === item.path}
                 tooltip={item.name}
+                className="h-10 rounded-lg px-3 text-sm font-medium transition-colors
+                   data-[active=true]:!bg-violet-50 [&[data-active=true]>svg]:!text-inherit
+                    data-[active=true]:!text-blue-600 hover:bg-violet-50/70"  
+                
               >
                 <NavLink
                   to={item.path}
                   className="flex items-center gap-2"
                 >
                   <item.icon />
-                  <span>{item.name}</span>
+                  <span className={location.pathname === item.path ? "text-blue-600" : ""}>{item.name}
+
+                  </span>
                 </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -131,13 +146,19 @@ function AppSidebar() {
                 asChild
                 isActive={location.pathname === item.path}
                 tooltip={item.name}
+                className="h-10 rounded-lg px-3 text-sm font-medium transition-colors
+                   data-[active=true]:!bg-violet-50 [&[data-active=true]>svg]:!text-inherit
+                    data-[active=true]:!text-blue-600 hover:bg-violet-50/70"  
+                
               >
                 <NavLink
                   to={item.path}
                   className="flex items-center gap-2"
                 >
                   <item.icon />
-                  <span>{item.name}</span>
+                  <span className={location.pathname === item.path ? "text-blue-600" : ""}>{item.name}
+
+                  </span>
                 </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
